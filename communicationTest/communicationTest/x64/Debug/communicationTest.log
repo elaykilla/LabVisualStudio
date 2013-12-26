@@ -1,18 +1,29 @@
-﻿Build started 12/18/2013 10:52:55 PM.
-     1>Project "C:\Users\Elay\Workspace\communicationTest\communicationTest\communicationTest.vcxproj" on node 2 (rebuild target(s)).
-     1>InitializeBuildStatus:
-         Creating "x64\Debug\communicationTest.unsuccessfulbuild" because "AlwaysCreate" was specified.
+﻿Build started 12/26/2013 6:53:21 PM.
+     1>Project "C:\Users\Elay\Workspace\LabVisualStudio\communicationTest\communicationTest\communicationTest.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "x64\Debug\communicationTest.lastbuildstate".
+       InitializeBuildStatus:
+         Touching "x64\Debug\communicationTest.unsuccessfulbuild".
        ClCompile:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I./MyLib/ /IC:\Users\Elay\Workspace\opencv\build\include /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt MyLib\CvFunction.cpp MyLib\SocketServer.cpp MyThread.cpp test.cpp
          test.cpp
-     1>test.cpp(17): error C2039: 'initModule_nonfree' : is not a member of 'cv'
-     1>test.cpp(17): error C3861: 'initModule_nonfree': identifier not found
          MyThread.cpp
          SocketServer.cpp
          CvFunction.cpp
          Generating Code...
-     1>Done Building Project "C:\Users\Elay\Workspace\communicationTest\communicationTest\communicationTest.vcxproj" (rebuild target(s)) -- FAILED.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Elay\Workspace\LabVisualStudio\communicationTest\x64\Debug\communicationTest.exe" /NOLOGO /LIBPATH:C:\Users\Elay\Workspace\opencv\build\x64\vc10\lib opencv_nonfree246d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\communicationTest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Elay\Workspace\LabVisualStudio\communicationTest\x64\Debug\communicationTest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Elay\Workspace\LabVisualStudio\communicationTest\x64\Debug\communicationTest.lib" /MACHINE:X64 x64\Debug\CvFunction.obj
+         x64\Debug\SocketServer.obj
+         x64\Debug\MyThread.obj
+         x64\Debug\test.obj
+         communicationTest.vcxproj -> C:\Users\Elay\Workspace\LabVisualStudio\communicationTest\x64\Debug\communicationTest.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Elay\Workspace\LabVisualStudio\communicationTest\x64\Debug\communicationTest.exe;#1" /manifest x64\Debug\communicationTest.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\communicationTest.unsuccessfulbuild".
+         Touching "x64\Debug\communicationTest.lastbuildstate".
+     1>Done Building Project "C:\Users\Elay\Workspace\LabVisualStudio\communicationTest\communicationTest\communicationTest.vcxproj" (rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:03.61
+Time Elapsed 00:00:03.80
