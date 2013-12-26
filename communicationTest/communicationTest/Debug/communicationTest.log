@@ -1,0 +1,23 @@
+﻿2013/03/28 16:56:25 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "c:\Users\student\documents\visual studio 2010\Projects\communicationTest\communicationTest\communicationTest.vcxproj" (build ターゲット)。
+     1>InitializeBuildStatus:
+         "Debug\communicationTest.unsuccessfulbuild" のタッチ タスクを実行しています。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./MyLib/ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+         test.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\student\documents\visual studio 2010\Projects\communicationTest\Debug\communicationTest.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\communicationTest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\student\documents\visual studio 2010\Projects\communicationTest\Debug\communicationTest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\student\documents\visual studio 2010\Projects\communicationTest\Debug\communicationTest.lib" /MACHINE:X86 Debug\CvFunction.obj
+         Debug\SocketServer.obj
+         Debug\MyThread.obj
+         Debug\test.obj
+         communicationTest.vcxproj -> c:\users\student\documents\visual studio 2010\Projects\communicationTest\Debug\communicationTest.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"c:\users\student\documents\visual studio 2010\Projects\communicationTest\Debug\communicationTest.exe;#1" /manifest Debug\communicationTest.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         ファイル "Debug\communicationTest.unsuccessfulbuild" を削除しています。
+         "Debug\communicationTest.lastbuildstate" のタッチ タスクを実行しています。
+     1>プロジェクト "c:\Users\student\documents\visual studio 2010\Projects\communicationTest\communicationTest\communicationTest.vcxproj" (build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:01.58

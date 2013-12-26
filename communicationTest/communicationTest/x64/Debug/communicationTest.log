@@ -1,0 +1,18 @@
+﻿Build started 12/18/2013 10:52:55 PM.
+     1>Project "C:\Users\Elay\Workspace\communicationTest\communicationTest\communicationTest.vcxproj" on node 2 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\communicationTest.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I./MyLib/ /IC:\Users\Elay\Workspace\opencv\build\include /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt MyLib\CvFunction.cpp MyLib\SocketServer.cpp MyThread.cpp test.cpp
+         test.cpp
+     1>test.cpp(17): error C2039: 'initModule_nonfree' : is not a member of 'cv'
+     1>test.cpp(17): error C3861: 'initModule_nonfree': identifier not found
+         MyThread.cpp
+         SocketServer.cpp
+         CvFunction.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\Elay\Workspace\communicationTest\communicationTest\communicationTest.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.61
