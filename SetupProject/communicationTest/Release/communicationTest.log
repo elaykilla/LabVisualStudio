@@ -1,0 +1,34 @@
+﻿2013/11/21 13:08:55 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "F:\Users\toshi\Desktop\Communication\c++(Server side)\communicationTest\communicationTest\communicationTest.vcxproj" (build ターゲット)。
+     1>InitializeBuildStatus:
+         "AlwaysCreate" が指定されたため "Release\communicationTest.unsuccessfulbuild" を作成しています。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./MyLib/ /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt MyLib\CvFunction.cpp MyLib\SocketServer.cpp MyThread.cpp test.cpp
+         CvFunction.cpp
+         SocketServer.cpp
+     1>C:\OpenCV2.3\include\opencv2/flann/logger.h(70): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : 'fopen' の宣言を確認してください。
+         MyThread.cpp
+     1>C:\OpenCV2.3\include\opencv2/flann/logger.h(70): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : 'fopen' の宣言を確認してください。
+         test.cpp
+     1>C:\OpenCV2.3\include\opencv2/flann/logger.h(70): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : 'fopen' の宣言を確認してください。
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Users\toshi\Desktop\Communication\c++(Server side)\communicationTest\Release\communicationTest.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\communicationTest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\Users\toshi\Desktop\Communication\c++(Server side)\communicationTest\Release\communicationTest.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Users\toshi\Desktop\Communication\c++(Server side)\communicationTest\Release\communicationTest.lib" /MACHINE:X86 Release\CvFunction.obj
+         Release\SocketServer.obj
+         Release\MyThread.obj
+         Release\test.obj
+         コード生成しています。
+         コード生成が終了しました。
+         communicationTest.vcxproj -> F:\Users\toshi\Desktop\Communication\c++(Server side)\communicationTest\Release\communicationTest.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\Users\toshi\Desktop\Communication\c++(Server side)\communicationTest\Release\communicationTest.exe;#1" /manifest Release\communicationTest.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         ファイル "Release\communicationTest.unsuccessfulbuild" を削除しています。
+         "Release\communicationTest.lastbuildstate" のタッチ タスクを実行しています。
+     1>プロジェクト "F:\Users\toshi\Desktop\Communication\c++(Server side)\communicationTest\communicationTest\communicationTest.vcxproj" (build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:05.66
