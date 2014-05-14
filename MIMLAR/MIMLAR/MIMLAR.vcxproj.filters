@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="MyThread.cpp">
+      <Filter>Sources\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="ARDrawingContext.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="testVid.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="ARPipeline.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCalibration.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="MyLib\CvFunction.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryTypes.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternDetector.cpp">
+      <Filter>Sources\AR</Filter>
+    </ClCompile>
+    <ClCompile Include="MyLib\SocketServer.cpp">
+      <Filter>Sources\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="testCom.cpp">
+      <Filter>Sources\Communication</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern.hpp">
+      <Filter>Sources\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLib\CvFunction.hpp">
+      <Filter>Headers\Communication Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MyOpenCV.h">
+      <Filter>Headers\Communication Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MyThread.h">
+      <Filter>Headers\Communication Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ARDrawingContext.hpp">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="ARPipeline.hpp">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraCalibration.hpp">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugHelpers.hpp">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryTypes.hpp">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLib\header.hpp">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternDetector.hpp">
+      <Filter>Headers\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLib\MyTimer.hpp">
+      <Filter>Sources\AR</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLib\SocketServer.hpp">
+      <Filter>Headers\Communication Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{99594670-55f9-4f65-9a7a-86daf9930f31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{f7ba1708-8ef0-4ef7-bd82-0cc62b0f3357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Communication">
+      <UniqueIdentifier>{b0c362c0-c65b-4450-9520-4d5c044b2908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\AR">
+      <UniqueIdentifier>{9ba583c3-50f3-436d-aa0a-acf5252d3925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\Communication Headers">
+      <UniqueIdentifier>{cd42cd99-6dc2-4bb8-9e1d-8594bed95b14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers\AR">
+      <UniqueIdentifier>{6bd831ce-2644-479c-98d1-ee8e893756e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

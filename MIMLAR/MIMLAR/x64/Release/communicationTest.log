@@ -1,0 +1,28 @@
+﻿Build started 12/18/2013 5:16:03 PM.
+     1>Project "C:\Users\Elay\Workspace\communicationTest\communicationTest\communicationTest.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Release\communicationTest.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I./MyLib/ /IC:\Users\Elay\Workspace\opencv\build\include /Zi /nologo /W3 /WX- /O2 /Oi /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc100.pdb" /Gd /TP /errorReport:prompt MyLib\CvFunction.cpp MyLib\SocketServer.cpp MyThread.cpp test.cpp
+         CvFunction.cpp
+         SocketServer.cpp
+         MyThread.cpp
+         test.cpp
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Elay\Workspace\communicationTest\x64\Release\communicationTest.exe" /NOLOGO /LIBPATH:C:\Users\Elay\Workspace\opencv\build\x64\vc10\lib opencv_calib3d246d.lib opencv_contrib246d.lib opencv_core246d.lib opencv_features2d246d.lib opencv_flann246d.lib opencv_gpu246d.lib opencv_haartraining_engined.lib opencv_highgui246d.lib opencv_imgproc246d.lib opencv_legacy246d.lib opencv_ml246d.lib opencv_nonfree246d.lib opencv_objdetect246d.lib opencv_photo246d.lib opencv_stitching246d.lib opencv_ts246d.lib opencv_video246d.lib opencv_videostab246d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Release\communicationTest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Elay\Workspace\communicationTest\x64\Release\communicationTest.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Elay\Workspace\communicationTest\x64\Release\communicationTest.lib" /MACHINE:X64 x64\Release\CvFunction.obj
+         x64\Release\SocketServer.obj
+         x64\Release\MyThread.obj
+         x64\Release\test.obj
+         Generating code
+         Finished generating code
+         communicationTest.vcxproj -> C:\Users\Elay\Workspace\communicationTest\x64\Release\communicationTest.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Elay\Workspace\communicationTest\x64\Release\communicationTest.exe;#1" /manifest x64\Release\communicationTest.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Release\communicationTest.unsuccessfulbuild".
+         Touching "x64\Release\communicationTest.lastbuildstate".
+     1>Done Building Project "C:\Users\Elay\Workspace\communicationTest\communicationTest\communicationTest.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.25

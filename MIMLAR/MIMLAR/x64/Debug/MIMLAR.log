@@ -1,0 +1,51 @@
+﻿Build started 5/15/2014 1:06:57 AM.
+     1>Project "C:\Users\Elay\Desktop\MIMLAR\MIMLAR\MIMLAR.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "x64\Debug\MIMLAR.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "x64\Debug\MIMLAR.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I./MyLib/ /IC:\Users\Elay\opencv\build\install\include /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt ARDrawingContext.cpp ARPipeline.cpp CameraCalibration.cpp GeometryTypes.cpp main.cpp MyLib\CvFunction.cpp MyLib\SocketServer.cpp MyThread.cpp Pattern.cpp PatternDetector.cpp testCom.cpp testVid.cpp
+         testVid.cpp
+         testCom.cpp
+         PatternDetector.cpp
+         Pattern.cpp
+         MyThread.cpp
+         SocketServer.cpp
+         CvFunction.cpp
+         main.cpp
+         GeometryTypes.cpp
+         CameraCalibration.cpp
+         ARPipeline.cpp
+         ARDrawingContext.cpp
+     1>ARDrawingContext.cpp(82): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>ARDrawingContext.cpp(82): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>ARDrawingContext.cpp(84): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>ARDrawingContext.cpp(84): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>ARDrawingContext.cpp(86): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+     1>ARDrawingContext.cpp(86): warning C4244: 'argument' : conversion from 'float' to 'GLsizei', possible loss of data
+         Generating Code...
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Elay\Desktop\MIMLAR\x64\Debug\MIMLAR.exe" /NOLOGO /LIBPATH:C:\Users\Elay\opencv\build\install\x64\vc10\lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\MIMLAR.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Elay\Desktop\MIMLAR\x64\Debug\MIMLAR.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Elay\Desktop\MIMLAR\x64\Debug\MIMLAR.lib" /MACHINE:X64 x64\Debug\ARDrawingContext.obj
+         x64\Debug\ARPipeline.obj
+         x64\Debug\CameraCalibration.obj
+         x64\Debug\GeometryTypes.obj
+         x64\Debug\main.obj
+         x64\Debug\CvFunction.obj
+         x64\Debug\SocketServer.obj
+         x64\Debug\MyThread.obj
+         x64\Debug\Pattern.obj
+         x64\Debug\PatternDetector.obj
+         x64\Debug\testCom.obj
+         x64\Debug\testVid.obj
+         MIMLAR.vcxproj -> C:\Users\Elay\Desktop\MIMLAR\x64\Debug\MIMLAR.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Elay\Desktop\MIMLAR\x64\Debug\MIMLAR.exe;#1" /manifest x64\Debug\MIMLAR.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\MIMLAR.unsuccessfulbuild".
+         Touching "x64\Debug\MIMLAR.lastbuildstate".
+     1>Done Building Project "C:\Users\Elay\Desktop\MIMLAR\MIMLAR\MIMLAR.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:16.27

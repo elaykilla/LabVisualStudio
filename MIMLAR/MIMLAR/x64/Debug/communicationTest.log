@@ -1,0 +1,45 @@
+﻿Build started 5/12/2014 5:42:54 PM.
+     1>Project "C:\Users\Elay\workspaceKeio\SetupProject\communicationTest\communicationTest.vcxproj" on node 2 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Debug\SetupProject.unsuccessfulbuild".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I./MyLib/ /IC:\Users\Elay\opencv\build\install\include /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt ARDrawingContext.cpp ARPipeline.cpp CameraCalibration.cpp GeometryTypes.cpp main.cpp MyLib\CvFunction.cpp Pattern.cpp PatternDetector.cpp test.cpp
+         test.cpp
+         PatternDetector.cpp
+     1>PatternDetector.cpp(67): warning C4244: 'initializing' : conversion from 'const int' to 'const float', possible loss of data
+     1>PatternDetector.cpp(68): warning C4244: 'initializing' : conversion from 'const int' to 'const float', possible loss of data
+         Pattern.cpp
+         CvFunction.cpp
+         main.cpp
+         GeometryTypes.cpp
+     1>GeometryTypes.cpp(22): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>GeometryTypes.cpp(51): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         CameraCalibration.cpp
+         ARPipeline.cpp
+         ARDrawingContext.cpp
+     1>ARDrawingContext.cpp(88): warning C4244: 'initializing' : conversion from 'int' to 'const GLfloat', possible loss of data
+     1>ARDrawingContext.cpp(88): warning C4244: 'initializing' : conversion from 'int' to 'const GLfloat', possible loss of data
+     1>ARDrawingContext.cpp(88): warning C4244: 'initializing' : conversion from 'int' to 'const GLfloat', possible loss of data
+     1>ARDrawingContext.cpp(88): warning C4244: 'initializing' : conversion from 'int' to 'const GLfloat', possible loss of data
+         Generating Code...
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Elay\workspaceKeio\SetupProject\x64\Debug\SetupProject.exe" /NOLOGO /LIBPATH:C:\Users\Elay\opencv\build\install\x64\vc10\lib opencv_nonfree300d.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\SetupProject.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Elay\workspaceKeio\SetupProject\x64\Debug\SetupProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Elay\workspaceKeio\SetupProject\x64\Debug\SetupProject.lib" /MACHINE:X64 x64\Debug\ARDrawingContext.obj
+         x64\Debug\ARPipeline.obj
+         x64\Debug\CameraCalibration.obj
+         x64\Debug\GeometryTypes.obj
+         x64\Debug\main.obj
+         x64\Debug\CvFunction.obj
+         x64\Debug\Pattern.obj
+         x64\Debug\PatternDetector.obj
+         x64\Debug\test.obj
+         communicationTest.vcxproj -> C:\Users\Elay\workspaceKeio\SetupProject\x64\Debug\SetupProject.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Elay\workspaceKeio\SetupProject\x64\Debug\SetupProject.exe;#1" /manifest x64\Debug\SetupProject.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\SetupProject.unsuccessfulbuild".
+         Touching "x64\Debug\SetupProject.lastbuildstate".
+     1>Done Building Project "C:\Users\Elay\workspaceKeio\SetupProject\communicationTest\communicationTest.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.24
