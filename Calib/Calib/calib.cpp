@@ -1,0 +1,125 @@
+#include <stdio.h>
+#include <iostream>
+#include <opencv2/features2d/features2d.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc_c.h>
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/calib3d/calib3d.hpp"
+
+#include <opencv2/nonfree/features2d.hpp>
+#include <opencv2/nonfree/nonfree.hpp>
+
+using namespace cv;
+using namespace std;
+int main(int argc, char** argv)
+{
+	//CHESS_ROWS and CHESS_COLS represent number of cornes along X and Y
+	const int CHESS_ROWS = 7;
+	const int CHESS_COLS = 10;
+	const int CORNER_NUM = CHESS_COLS * CHESS_ROWS;
+
+	//CHESSBOARD_NUM is the number of input images
+	const int CHESSBOARD_NUM = 50;
+	const bool DISPLAY_CHESS = true;
+
+	//DetectedChessCount is the number of images in which the chessboard has been detected
+	int DetectedChessCount = 0;
+
+	//CHESS_SIZE is the size in mm of a black square
+	const double CHESS_SIZE = 22.0;
+	const  cv::Size patternSize(CHESS_COLS, CHESS_ROWS);
+
+	//Detected_2DCorners contains the corners of all the images
+	std::vector<std::vector<cv::Point2f>> Detected_2DCorners;		
+	//Chessboard
+	std::cout << "detection...."<<std::endl;
+
+	//Run through each image
+	for(int j=0; j<CHESSBOARD_NUM; j++){	
+		//
+		string imageLoc;
+		std::vector<cv::Point2f>	PGRCorners;
+		bool canFindPGRCorners;
+		//Load
+
+		//Read image location
+		imageLoc = argv[1];
+		std::ostringstream PGRChessName;
+		PGRChessName << imageLoc <<"_"<< j << ".jpg";
+		cv::Mat PGRChessImage = cv::imread(PGRChessName.str(), 0);
+
+		//verify if Chessboard is found
+		canFindPGRCorners = cv::findChessboardCorners(
+			PGRChessImage, 
+			patternSize, 
+			PGRCorners,
+			CV_CALIB_CB_ADAPTIVE_THRESH | CV_CALIB_CB_NORMALIZE_IMAGE);
+		if(canFindPGRCorners){
+			//detect the corners
+			cv::cornerSubPix(
+				PGRChessImage,
+				PGRCorners,
+				cv::Size(11, 11),
+				cv::Size(-1, -1),
+				cvTermCriteria(CV_TERMCRIT_ITER+CV_TERMCRIT_EPS, 30, 0.01) );
+
+			//Add the detected corners 
+			Detected_2DCorners.push_back(PGRCorners);
+
+			//Augment the number of successfuly detected chessboards
+			DetectedChessCount++;
+		}
+	}
+	std::cout << DetectedChessCount*CORNER_NUM<<" points were detected..."<<std::endl;
+	//object points
+	std::vector<std::vector<cv::Point3f>> Chess3Dpoints;
+	cv::Point3f point_3d;
+	//3Dpoints
+
+	//Calculate 3D cordinnates of each corner 
+	std::vector<cv::Point3f> Chess3Dpoints_tmp;
+	for (int j = 0; j < CHESS_ROWS; j++) {
+		for (int k = 0; k < CHESS_COLS; k++) {
+			//3Dpointsの格納
+			point_3d.x = j*CHESS_SIZE;
+			point_3d.y = k*CHESS_SIZE;
+			point_3d.z = 0.0;
+			Chess3Dpoints_tmp.push_back(point_3d);
+		}
+	}
+
+	//Add cordinates for DetectedChessCount times
+	for (int i = 0; i < DetectedChessCount; i++) {
+		Chess3Dpoints.push_back(Chess3Dpoints_tmp);
+	}
+
+	cv::Mat intrinsic_matrix = cv::Mat::eye(3, 3, CV_64F);
+	//distortion
+	cv::Mat distCoeffs = cv::Mat::zeros(8, 1, CV_64F);
+	//
+	std::vector<cv::Mat> rvecs, tvecs;
+	//cv::Mat rvecs;
+	//cv::Mat tvecs;
+	cv::Size image_size(PGR_Width, PGR_Height);
+	//内部パラメータ計算
+	//Find intrinsic and extrinsic camera parameters
+	double rms = cv::calibrateCamera(
+		Chess3Dpoints,
+		Detected_2DCorners,
+		image_size,
+		intrinsic_matrix,
+		distCoeffs, 
+		rvecs, tvecs);
+	//CV_CALIB_CB_ADAPTIVE_THRESH | CV_CALIB_CB_NORMALIZE_IMAGE); 
+
+	std::cout << "Re-projection error reported by calibrateCamera: "<< rms << std::endl;
+
+
+	//ファイル出力
+	std::ostringstream filename;
+	filename << "Calibration" << ".xml";
+	cv::FileStorage	cvfs(filename.str(), cv::FileStorage::WRITE);
+	//wirte data to file
+	cv::write(cvfs, "intrinsic", intrinsic_matrix);
+	cv::write(cvfs, "distortion", distCoeffs); 
+}
