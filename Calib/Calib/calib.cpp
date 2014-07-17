@@ -11,16 +11,39 @@
 
 using namespace cv;
 using namespace std;
+
+void showInstructions(){
+	cout << "Camera Calibration" <<endl;
+	cout << "The input images should be named with a number suffix. For example: example_1 example_2 etc..." <<endl;
+	cout << "inputImageName is the name of the input image without the number suffix" <<endl;
+	cout << "Image number is the number of input images" <<endl;
+	cout << "imageWidth is the width of the images. All images should have equal width" <<endl;
+	cout << "imageHeight is the height of the images. All images should have equal Height" <<endl;
+	cout << "Calib.exe inputImageName imageNumb imageWidth imageheight" <<endl;
+
+}
+
 int main(int argc, char** argv)
 {
+
+	if (argc != 5){
+		cout << "Please verify the number of arguments";
+		showInstructions();
+		return -1;
+
+	}
 	//CHESS_ROWS and CHESS_COLS represent number of cornes along X and Y
 	const int CHESS_ROWS = 7;
 	const int CHESS_COLS = 10;
 	const int CORNER_NUM = CHESS_COLS * CHESS_ROWS;
 
 	//CHESSBOARD_NUM is the number of input images
-	const int CHESSBOARD_NUM = 50;
+	const int CHESSBOARD_NUM = atoi(argv[2]);
 	const bool DISPLAY_CHESS = true;
+
+	//The Width and Height of the images
+	int PGR_Width = atoi(argv[3]);
+	int PGR_Height = atoi(argv[4]);
 
 	//DetectedChessCount is the number of images in which the chessboard has been detected
 	int DetectedChessCount = 0;
@@ -47,6 +70,19 @@ int main(int argc, char** argv)
 		std::ostringstream PGRChessName;
 		PGRChessName << imageLoc <<"_"<< j << ".jpg";
 		cv::Mat PGRChessImage = cv::imread(PGRChessName.str(), 0);
+
+		//verify that image is found
+		if(!PGRChessImage.data){
+			cout << "One or more of the input images were not found" << PGRChessName.str() <<endl;
+			return -1;
+		}
+
+		if(PGRChessImage.cols!=PGR_Height | PGRChessImage.rows!=PGR_Width){
+			cout << "One or more of the input images have incorrect dimensions." <<endl;
+			cout << "Expected: (Height, Width) = (" << PGR_Height << "," << PGR_Width << ")"<< "but found: (" << PGRChessImage.cols << "," << PGRChessImage.rows << ")" << endl;
+		}
+		//Verify image width and height
+
 
 		//verify if Chessboard is found
 		canFindPGRCorners = cv::findChessboardCorners(
@@ -100,8 +136,11 @@ int main(int argc, char** argv)
 	std::vector<cv::Mat> rvecs, tvecs;
 	//cv::Mat rvecs;
 	//cv::Mat tvecs;
+
+
+
 	cv::Size image_size(PGR_Width, PGR_Height);
-	//内部パラメータ計算
+	//
 	//Find intrinsic and extrinsic camera parameters
 	double rms = cv::calibrateCamera(
 		Chess3Dpoints,
@@ -122,4 +161,6 @@ int main(int argc, char** argv)
 	//wirte data to file
 	cv::write(cvfs, "intrinsic", intrinsic_matrix);
 	cv::write(cvfs, "distortion", distCoeffs); 
+
+	return 0;
 }
