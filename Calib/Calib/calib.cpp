@@ -62,13 +62,14 @@ void calibrate(string filename, int nbImages, int imageWidth, int imageHeight, M
 		//verify that image is found
 		if(!PGRChessImage.data){
 			cout << "One or more of the input images were not found" << PGRChessName.str() <<endl;
-			return -1;
+			return;
 		}
 
 		//Verify image width and height
 		if(PGRChessImage.cols!=PGR_Width | PGRChessImage.rows!=PGR_Height){
 			cout << "One or more of the input images have incorrect dimensions." <<endl;
 			cout << "Expected: (Height, Width) = (" << PGR_Height << "," << PGR_Width << ")"<< "but found: (" << PGRChessImage.cols << "," << PGRChessImage.rows << ")" << endl;
+			return;
 		}
 		
 

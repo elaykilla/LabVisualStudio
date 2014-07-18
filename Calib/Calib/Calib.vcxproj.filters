@@ -9,7 +9,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Test.h">
+    <ClInclude Include="cvincludes.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cart2Sphere.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Calib.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -18,6 +24,12 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="calib.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="cart2Sphere.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
