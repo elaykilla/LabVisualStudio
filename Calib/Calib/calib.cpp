@@ -1,16 +1,4 @@
-#include <stdio.h>
-#include <iostream>
-#include <opencv2/features2d/features2d.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc_c.h>
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/calib3d/calib3d.hpp"
-
-#include <opencv2/nonfree/features2d.hpp>
-#include <opencv2/nonfree/nonfree.hpp>
-
-using namespace cv;
-using namespace std;
+#include "cvIncludes.h";
 
 void showInstructions(){
 	cout << "Camera Calibration" <<endl;
@@ -23,33 +11,33 @@ void showInstructions(){
 
 }
 
-int main(int argc, char** argv)
+void calibrate(string filename, int nbImages, int imageWidth, int imageHeight, Mat& intrinsic, Mat& distortion)
 {
 
-	if (argc != 5){
+	/*if (argc != 5){
 		cout << "Please verify the number of arguments";
 		showInstructions();
 		return -1;
 
-	}
+	}*/
 	//CHESS_ROWS and CHESS_COLS represent number of cornes along X and Y
 	const int CHESS_ROWS = 7;
 	const int CHESS_COLS = 10;
 	const int CORNER_NUM = CHESS_COLS * CHESS_ROWS;
 
 	//CHESSBOARD_NUM is the number of input images
-	const int CHESSBOARD_NUM = atoi(argv[2]);
+	const int CHESSBOARD_NUM = nbImages;
 	const bool DISPLAY_CHESS = true;
 
 	//The Width and Height of the images
-	int PGR_Width = atoi(argv[3]);
-	int PGR_Height = atoi(argv[4]);
+	int PGR_Width = imageWidth;
+	int PGR_Height = imageHeight;
 
 	//DetectedChessCount is the number of images in which the chessboard has been detected
 	int DetectedChessCount = 0;
 
 	//CHESS_SIZE is the size in mm of a black square
-	const double CHESS_SIZE = 22.0;
+	const double CHESS_SIZE = 25.0;
 	const  cv::Size patternSize(CHESS_COLS, CHESS_ROWS);
 
 	//Detected_2DCorners contains the corners of all the images
@@ -66,7 +54,7 @@ int main(int argc, char** argv)
 		//Load
 
 		//Read image location
-		imageLoc = argv[1];
+		imageLoc = filename;
 		std::ostringstream PGRChessName;
 		PGRChessName << imageLoc <<"_"<< j << ".jpg";
 		cv::Mat PGRChessImage = cv::imread(PGRChessName.str(), 0);
@@ -77,11 +65,12 @@ int main(int argc, char** argv)
 			return -1;
 		}
 
-		if(PGRChessImage.cols!=PGR_Height | PGRChessImage.rows!=PGR_Width){
+		//Verify image width and height
+		if(PGRChessImage.cols!=PGR_Width | PGRChessImage.rows!=PGR_Height){
 			cout << "One or more of the input images have incorrect dimensions." <<endl;
 			cout << "Expected: (Height, Width) = (" << PGR_Height << "," << PGR_Width << ")"<< "but found: (" << PGRChessImage.cols << "," << PGRChessImage.rows << ")" << endl;
 		}
-		//Verify image width and height
+		
 
 
 		//verify if Chessboard is found
@@ -155,12 +144,15 @@ int main(int argc, char** argv)
 
 
 	//ファイル出力
-	std::ostringstream filename;
-	filename << "Calibration" << ".xml";
-	cv::FileStorage	cvfs(filename.str(), cv::FileStorage::WRITE);
-	//wirte data to file
+	std::ostringstream parameters;
+	parameters << "Calibration" << ".xml";
+	cv::FileStorage	cvfs(parameters.str(), cv::FileStorage::WRITE);
+
+	//fill matrices
+	intrinsic <- intrinsic_matrix;
+	distortion <-distCoeffs;
+
+	//wirte data to filer
 	cv::write(cvfs, "intrinsic", intrinsic_matrix);
 	cv::write(cvfs, "distortion", distCoeffs); 
-
-	return 0;
 }
